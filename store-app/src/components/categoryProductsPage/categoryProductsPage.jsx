@@ -1,0 +1,53 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { deleteProduct } from "../../store/productStore";
+
+const CategoryProductComponent = (props) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const params = useParams();
+
+  const productList = useSelector((state) => state.productStore.data).filter(
+    (x) => x.category === params.category
+  );
+
+  return (
+    <div className="container">
+      <h1 style={{"textAlign":"center"}}>{params.category}</h1>
+      <div className="row">
+        {productList.map((product) => {
+          return (
+            <div className="col-sm" key={product.id}>
+              <div
+                className="card m-2"
+                style={{ width: "300px", height: "400px" }}
+              >
+                <img
+                  className="card-img-top"
+                  src={product.image}
+                  style={{ width: "290px", height: "200px" }}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <h6>{product.category}</h6>
+                  <h6>{product.price} ₺</h6>
+                  <span
+                    href="#"
+                    className="btn btn-primary m-1"
+                    onClick={() => {
+                      navigate("/detail/" + product.id);
+                    }}
+                  >
+                    Görüntüle
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default CategoryProductComponent;
