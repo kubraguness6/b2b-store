@@ -33,13 +33,13 @@ const HomePageComponent = () => {
             id="carouselExampleControls"
             className="carousel slide"
             data-ride="carousel"
-            style={{ maxWidth: "1000px", height: "400px", textAlign: "center" }}
+            style={{ maxWidth: "600px", height: "400px", textAlign: "center",marginLeft:"300px" }}
           >
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img
                   style={{
-                    width: "1000px",
+                    width: "600px",
                     height: "400px",
                     textAlign: "center",
                   }}

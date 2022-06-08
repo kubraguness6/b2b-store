@@ -41,9 +41,16 @@ export const productStore = createSlice({
       state.data = finalStore;
       state.cart = [];
     },
+    updateBuyer:(state,action)=>{
+      let cart = [...state.cart];
+
+      cart.forEach((item)=>{
+        item.buyer=action.payload
+      })
+    }
   },
 });
 
-export const { addProduct, deleteProduct, addToCart, purchaseProduct } =
+export const { addProduct, deleteProduct, addToCart, purchaseProduct,updateBuyer } =
   productStore.actions;
 export default productStore.reducer;

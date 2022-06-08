@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { purchaseProduct } from "../../store/productStore";
+import { purchaseProduct, updateBuyer } from "../../store/productStore";
 
 const PurchasePageComponent = (props) => {
   const cart = useSelector((state) => state.productStore.cart);
   const isLoggedIn=useSelector((state)=>state.authStore.value.isLoggedIn)
+const user=useSelector((state)=>state.authStore.currentUser)
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -27,6 +28,10 @@ const PurchasePageComponent = (props) => {
     validThru: "",
     cvv: "",
   };
+
+  useEffect(()=>{
+    dispatch(updateBuyer(user))
+  },isLoggedIn)
 
   const [inputs, setInputs] = useState({});
 

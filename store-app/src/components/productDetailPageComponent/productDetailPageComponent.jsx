@@ -16,7 +16,6 @@ const ProductDetailPageComponent = (props) => {
   const newOrder = {
     product: {},
     quantity: 0,
-    buyer: {},
   };
 
   const handleChange = (event) => {
@@ -28,7 +27,6 @@ const ProductDetailPageComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     inputs.product = product;
-    inputs.buyer = user;
     dispatch(addToCart({ inputs: inputs }));
   };
 
