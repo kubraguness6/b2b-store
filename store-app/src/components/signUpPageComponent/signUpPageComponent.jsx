@@ -12,6 +12,7 @@ const SignUpPageComponent = (props) => {
     username: "",
     fullName: "",
     email: "",
+    address:"",
     role: "",
     password: "",
   };
@@ -74,6 +75,17 @@ const SignUpPageComponent = (props) => {
                 type="text"
                 name="email"
                 value={inputs.email || ""}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Kullanıcı Adres:</label>
+              <input
+                className="form-control"
+                type="text"
+                name="address"
+                value={inputs.address || ""}
                 onChange={handleChange}
               />
             </div>
