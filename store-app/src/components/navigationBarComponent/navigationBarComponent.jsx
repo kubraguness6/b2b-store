@@ -48,7 +48,7 @@ const NavigationBarComponent = () => {
               <span
                 className="dropdown-item"
                 onClick={() => {
-                  navigate("/list");
+                  navigate("/customerList");
                 }}
               >
                 Tüm ürünler

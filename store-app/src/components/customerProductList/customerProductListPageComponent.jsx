@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteProduct } from "../../store/productStore";
 
-const ProductListComponent = (props) => {
+const CustomerProductListPageComponent = (props) => {
   const productList = useSelector((state) => state.productStore.data);
 
   const navigate = useNavigate();
@@ -10,6 +9,7 @@ const ProductListComponent = (props) => {
 
   return (
     <div className="container">
+      <h1 style={{ textAlign: "center" }}>Tüm Ürünler</h1>
       <div className="row">
         {productList.map((product) => {
           return (
@@ -33,15 +33,6 @@ const ProductListComponent = (props) => {
                   <h6>{product.price} ₺</h6>
                   <span
                     href="#"
-                    className="btn btn-dark m-1"
-                    onClick={() => {
-                      dispatch(deleteProduct(product));
-                    }}
-                  >
-                    Sil
-                  </span>
-                  <span
-                    href="#"
                     className="btn btn-primary m-1"
                     onClick={() => {
                       navigate("/detail/" + product.id);
@@ -59,4 +50,4 @@ const ProductListComponent = (props) => {
   );
 };
 
-export default ProductListComponent;
+export default CustomerProductListPageComponent;

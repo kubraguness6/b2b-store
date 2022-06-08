@@ -12,25 +12,49 @@ import PurchaseSuccessPageComponent from "./components/purchaseSuccessPageCompon
 import SignUpPageComponent from "./components/signUpPageComponent/signUpPageComponent";
 import CategoryProductComponent from "./components/categoryProductsPage/categoryProductsPage";
 import SaleHistoryPageComponent from "./components/saleHistoryPageComponent/saleHistoryPageComponent";
+import CustomerProductListPageComponent from "./components/customerProductList/customerProductListPageComponent";
 
 function App() {
-  return <div>
-    <BrowserRouter>
-    <NavigationBarComponent></NavigationBarComponent>
-    <Routes>
-    <Route exact path="/" element={<HomePageComponent />} />
-    <Route exact path="/list" element={<ProductListComponent />} />
-    <Route exact path="/productForm" element={<ProductFormComponent />} />
-    <Route exact path="/login" element={<LoginPageComponent />} />
-    <Route exact path="/detail/:id" element={<ProductDetailPageComponent />} />
-    <Route exact path="/purchase" element={<PurchasePageComponent />} />
-    <Route exact path="/purchasesuccess" element={<PurchaseSuccessPageComponent />} />
-    <Route exact path="/signup" element={<SignUpPageComponent />} />
-    <Route exact path="/category/:category" element={<CategoryProductComponent />} />
-    <Route exact path="/salehistory" element={<SaleHistoryPageComponent />} />
-    </Routes>
-    </BrowserRouter>
-  </div>;
+  return (
+    <div>
+      <BrowserRouter>
+        <NavigationBarComponent></NavigationBarComponent>
+        <Routes>
+          <Route exact path="/" element={<HomePageComponent />} />
+          <Route exact path="/list" element={<ProductListComponent />} />
+          <Route exact path="/productForm" element={<ProductFormComponent />} />
+          <Route exact path="/login" element={<LoginPageComponent />} />
+          <Route
+            exact
+            path="/detail/:id"
+            element={<ProductDetailPageComponent />}
+          />
+          <Route exact path="/purchase" element={<PurchasePageComponent />} />
+          <Route
+            exact
+            path="/purchasesuccess"
+            element={<PurchaseSuccessPageComponent />}
+          />
+          <Route exact path="/signup" element={<SignUpPageComponent />} />
+          <Route
+            exact
+            path="/category/:category"
+            element={<CategoryProductComponent />}
+          />
+          <Route
+            exact
+            path="/salehistory"
+            element={<SaleHistoryPageComponent />}
+          />
+          <Route
+            exact
+            path="/customerList"
+            element={<CustomerProductListPageComponent />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
