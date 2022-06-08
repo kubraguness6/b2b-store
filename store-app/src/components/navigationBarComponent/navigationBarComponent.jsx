@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import "./navigationBarComponent.css";
 
 const NavigationBarComponent = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light ">
       <a className="navbar-brand" href="#">
         B2B Store
       </a>
