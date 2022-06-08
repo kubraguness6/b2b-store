@@ -30,7 +30,6 @@ const ProductDetailPageComponent = (props) => {
     inputs.product = product;
     inputs.buyer = user;
     dispatch(addToCart({ inputs: inputs }));
-    alert(inputs);
   };
 
   return (

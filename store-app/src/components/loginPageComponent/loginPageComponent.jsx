@@ -21,7 +21,6 @@ const LoginPageComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(login({ inputs: inputs }));
-    alert(inputs);
   };
 
   // useEffect(() => {
@@ -49,7 +48,7 @@ const LoginPageComponent = (props) => {
               <label>Şifre:</label>
               <input
                 className="form-control"
-                type="text"
+                type="password"
                 name="password"
                 value={inputs.password || ""}
                 onChange={handleChange}

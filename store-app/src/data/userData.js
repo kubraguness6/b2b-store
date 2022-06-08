@@ -6,13 +6,5 @@ export const users = [
     email: "kubra.gunes@hotmail.com",
     role: "SUPER_ADMIN",
     password: "secret",
-  },
-  {
-    id: "2",
-    username: "ayse",
-    fullName: "Ayşe Yılmaz",
-    email: "ayse.yilmaz@hotmail.com",
-    role: "USER",
-    password: "secret",
-  },
+  }
 ];

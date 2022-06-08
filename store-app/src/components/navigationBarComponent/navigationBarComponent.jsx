@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./navigationBarComponent.css";
 
 const NavigationBarComponent = () => {
   const navigate = useNavigate();
+  const currentUser = useSelector((state) => state.authStore.currentUser);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light ">
@@ -128,44 +130,46 @@ const NavigationBarComponent = () => {
               </span>
             </div>
           </li>
-          <li className="nav-item dropdown">
-            <span
-              className="nav-link dropdown-toggle"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Admin Paneli
-            </span>
-            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+          {currentUser.role === "SUPER_ADMIN" && (
+            <li className="nav-item dropdown">
               <span
-                className="dropdown-item"
-                onClick={() => {
-                  navigate("/productForm");
-                }}
+                className="nav-link dropdown-toggle"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
               >
-                Ürün Ekle
+                Admin Paneli
               </span>
-              <span
-                className="dropdown-item"
-                onClick={() => {
-                  navigate("/list");
-                }}
-              >
-                Ürünleri Listele
-              </span>
-              <span
-                className="dropdown-item"
-                onClick={() => {
-                  navigate("/salehistory");
-                }}
-              >
-                Satış Geçmişi
-              </span>
-            </div>
-          </li>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <span
+                  className="dropdown-item"
+                  onClick={() => {
+                    navigate("/productForm");
+                  }}
+                >
+                  Ürün Ekle
+                </span>
+                <span
+                  className="dropdown-item"
+                  onClick={() => {
+                    navigate("/list");
+                  }}
+                >
+                  Ürünleri Listele
+                </span>
+                <span
+                  className="dropdown-item"
+                  onClick={() => {
+                    navigate("/salehistory");
+                  }}
+                >
+                  Satış Geçmişi
+                </span>
+              </div>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

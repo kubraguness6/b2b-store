@@ -30,7 +30,6 @@ const ProductFormComponent = (props) => {
     event.preventDefault();
     inputs.seller = user;
     dispatch(addProduct({ inputs: inputs }));
-    alert(inputs);
   };
 
   useEffect(() => {

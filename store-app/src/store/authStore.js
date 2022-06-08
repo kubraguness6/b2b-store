@@ -4,15 +4,15 @@ import { users } from "../data/userData";
 export const authStore = createSlice({
   name: "authStore",
   initialState: {
-    userList:users,
+    userList: users,
     value: {
       isLoggedIn: false,
       loggedInError: "",
     },
-    currentUser:{}
+    currentUser: {},
   },
   reducers: {
-    addUser:(state,action)=>{
+    addUser: (state, action) => {
       let temp = [...state.userList];
       const payload = action.payload.inputs;
       temp.unshift(payload);
@@ -39,10 +39,9 @@ export const authStore = createSlice({
           );
         }
       });
-
     },
   },
 });
 
-export const { login,addUser } = authStore.actions;
+export const { login, addUser } = authStore.actions;
 export default authStore.reducer;

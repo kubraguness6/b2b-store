@@ -5,8 +5,11 @@ import { purchaseProduct } from "../../store/productStore";
 
 const PurchasePageComponent = (props) => {
   const cart = useSelector((state) => state.productStore.cart);
+  const isLoggedIn=useSelector((state)=>state.authStore.value.isLoggedIn)
+
   const navigate = useNavigate();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
+
 
   let totalPrice = 0;
 
@@ -36,13 +39,18 @@ const PurchasePageComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     //dispatch(addMovie({ inputs: inputs }));
-    alert(inputs.inputs);
   };
 
-  const purchase=()=>{
-    navigate("/purchasesuccess");
-    dispatch(purchaseProduct())
-  }
+  const purchase = () => {
+    if(isLoggedIn){
+      navigate("/purchasesuccess");
+      dispatch(purchaseProduct());
+    }
+    else{
+      alert("Öncelikle Giriş Yapmalısınız!")
+    }
+    
+  };
 
   return (
     <div className="container">
