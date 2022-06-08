@@ -31,7 +31,7 @@ const LoginPageComponent = (props) => {
   return (
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Giriş Yap</h1>
-      <div className="card">
+      <div className="card" style={{ borderRadius: "10px" }}>
         <div className="contianer m-2">
           <form onSubmit={handleSubmit}>
             <div className="form-group">

@@ -16,7 +16,11 @@ const ProductListComponent = (props) => {
             <div className="col-sm" key={product.id}>
               <div
                 className="card m-2"
-                style={{ width: "300px", height: "400px" }}
+                style={{
+                  width: "300px",
+                  height: "400px",
+                  borderRadius: "10px",
+                }}
               >
                 <img
                   className="card-img-top"

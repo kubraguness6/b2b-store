@@ -11,36 +11,38 @@ const SaleHistoryPageComponent = (props) => {
   return (
     <div className="container">
       {sales.map((sale) => {
-        return <div className="card m-2">
+        return (
+          <div className="card m-2" style={{ borderRadius: "10px" }}>
             <div className="row m-2">
-                <h6>Ürün Adı: </h6>
-                <h6>{sale?.product?.name}</h6>
+              <h6>Ürün Adı: </h6>
+              <h6>{sale?.product?.name}</h6>
             </div>
             <div className="row m-2">
-                <h6>Ürün Kategorisi: </h6>
-                <h6>{sale?.product?.category}</h6>
+              <h6>Ürün Kategorisi: </h6>
+              <h6>{sale?.product?.category}</h6>
             </div>
             <div className="row m-2">
-                <h6>Ürün Açıklaması: </h6>
-                <h6>{sale?.product?.description}</h6>
+              <h6>Ürün Açıklaması: </h6>
+              <h6>{sale?.product?.description}</h6>
             </div>
             <div className="row m-2">
-                <h6>Ürün Fiyatı: </h6>
-                <h6>{sale?.product?.price}</h6>
+              <h6>Ürün Fiyatı: </h6>
+              <h6>{sale?.product?.price}</h6>
             </div>
             <div className="row m-2">
-                <h6>Ürün Adedi: </h6>
-                <h6>{sale?.quantity}</h6>
+              <h6>Ürün Adedi: </h6>
+              <h6>{sale?.quantity}</h6>
             </div>
             <div className="row m-2">
-                <h6>Alıcı İsmi: </h6>
-                <h6>{sale?.buyer?.fullName}</h6>
+              <h6>Alıcı İsmi: </h6>
+              <h6>{sale?.buyer?.fullName}</h6>
             </div>
             <div className="row m-2">
-                <h6>Alıcı E-maili: </h6>
-                <h6>{sale?.buyer?.email}</h6>
+              <h6>Alıcı E-maili: </h6>
+              <h6>{sale?.buyer?.email}</h6>
             </div>
-        </div>;
+          </div>
+        );
       })}
     </div>
   );

@@ -13,14 +13,18 @@ const CategoryProductComponent = (props) => {
 
   return (
     <div className="container">
-      <h1 style={{"textAlign":"center"}}>{params.category}</h1>
+      <h1 style={{ textAlign: "center" }}>{params.category}</h1>
       <div className="row">
         {productList.map((product) => {
           return (
             <div className="col-sm" key={product.id}>
               <div
                 className="card m-2"
-                style={{ width: "300px", height: "400px" }}
+                style={{
+                  width: "300px",
+                  height: "400px",
+                  borderRadius: "10px",
+                }}
               >
                 <img
                   className="card-img-top"

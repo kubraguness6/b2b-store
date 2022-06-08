@@ -32,7 +32,7 @@ const SignUpPageComponent = (props) => {
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Kayıt Ol</h1>
 
-      <div className="card">
+      <div className="card" style={{ borderRadius: "10px" }}>
         <div className="container m-2">
           <form onSubmit={handleSubmit}>
             <div className="form-group">

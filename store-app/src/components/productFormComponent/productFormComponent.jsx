@@ -5,7 +5,7 @@ import { addProduct } from "../../store/productStore";
 const ProductFormComponent = (props) => {
   const dispatch = useDispatch();
 
-  const user=useSelector((state)=>state.authStore.currentUser)
+  const user = useSelector((state) => state.authStore.currentUser);
 
   const [inputs, setInputs] = useState({});
 
@@ -17,7 +17,7 @@ const ProductFormComponent = (props) => {
     description: "",
     stockAmount: "",
     price: 0,
-    seller:{}
+    seller: {},
   };
 
   const handleChange = (event) => {
@@ -28,7 +28,7 @@ const ProductFormComponent = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    inputs.seller=user;
+    inputs.seller = user;
     dispatch(addProduct({ inputs: inputs }));
     alert(inputs);
   };
@@ -40,7 +40,7 @@ const ProductFormComponent = (props) => {
   return (
     <div className="container">
       <h1 style={{ textAlign: "center" }}>Ürün Ekle</h1>
-      <div className="card">
+      <div className="card" style={{ borderRadius: "10px" }}>
         <div className="container m-2">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
