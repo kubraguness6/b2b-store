@@ -5,6 +5,7 @@ export const users = [
     fullName: "Kübra Günes",
     email: "kubra.gunes@hotmail.com",
     role: "SUPER_ADMIN",
-    password: "secret",
+    password: "password",
+    address:"Menekse Mah. 11.sok no:45 Istanbul/Türkiye"
   }
 ];
