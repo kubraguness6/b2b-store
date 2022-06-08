@@ -38,10 +38,14 @@ const ProductDetailPageComponent = (props) => {
       <div className="container">
         <div className="row" style={{ textAlign: "center" }}>
           <div className="container">
-            <img src={product.image} alt="" />
+            <img
+              src={product.image}
+              alt=""
+              style={{ maxWidth: "800px", maxHeight: "600px" }}
+            />
           </div>
         </div>
-        
+
         <div className="row">
           <h1 style={{ textAlign: "center" }}>{product.name}</h1>
         </div>

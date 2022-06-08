@@ -56,7 +56,7 @@ const NavigationBarComponent = () => {
               <span
                 className="dropdown-item"
                 onClick={() => {
-                  navigate("/category/computer");
+                  navigate("/category/Bilgisayar");
                 }}
               >
                 Bilgisayar
@@ -64,7 +64,7 @@ const NavigationBarComponent = () => {
               <span
                 className="dropdown-item"
                 onClick={() => {
-                  navigate("/category/television");
+                  navigate("/category/Televizyon");
                 }}
               >
                 Televizyon
@@ -72,7 +72,7 @@ const NavigationBarComponent = () => {
               <span
                 className="dropdown-item"
                 onClick={() => {
-                  navigate("/category/speaker");
+                  navigate("/category/Hoparlör");
                 }}
               >
                 Hoparlör
@@ -80,7 +80,7 @@ const NavigationBarComponent = () => {
               <span
                 className="dropdown-item"
                 onClick={() => {
-                  navigate("/category/equipment");
+                  navigate("/category/Ekipman");
                 }}
               >
                 Ekipman
