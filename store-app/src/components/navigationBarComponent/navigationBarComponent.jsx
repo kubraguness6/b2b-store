@@ -74,7 +74,7 @@ const NavigationBarComponent = () => {
               <span
                 className="dropdown-item"
                 onClick={() => {
-                  navigate("/category/Hoparlör");
+                  navigate("/category/Hoparlor");
                 }}
               >
                 Hoparlör

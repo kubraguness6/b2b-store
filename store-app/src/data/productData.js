@@ -161,7 +161,7 @@ export const products = [
   {
     id: "10",
     name: "Silindir Hoparlör",
-    category: "Hoparlör",
+    category: "Hoparlor",
     image: "https://resim.epey.com/204287/m_jbl-flip-5-1.png",
     description: "Dünyanın en kaliteli silindir hoparlörü",
     stockAmount: 200,
