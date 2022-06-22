@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../../store/authStore";
+import { v4 as uuid } from 'uuid';
+
 
 const SignUpPageComponent = (props) => {
   const dispatch = useDispatch();
@@ -25,6 +27,7 @@ const SignUpPageComponent = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    inputs.id=uuid()
     dispatch(addUser({ inputs: inputs }));
   };
 
@@ -35,7 +38,7 @@ const SignUpPageComponent = (props) => {
       <div className="card" style={{ borderRadius: "10px" }}>
         <div className="container m-2">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Kullanıcı ID:</label>
               <input
                 className="form-control"
@@ -44,7 +47,7 @@ const SignUpPageComponent = (props) => {
                 value={inputs.id || ""}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
 
             <div className="form-group">
               <label>Kullanıcı Adı:</label>
@@ -81,7 +84,7 @@ const SignUpPageComponent = (props) => {
 
             <div className="form-group">
               <label>Kullanıcı Adres:</label>
-              <input
+              <textarea
                 className="form-control"
                 type="text"
                 name="address"

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../store/productStore";
+import { v4 as uuid } from 'uuid';
 
 const ProductFormComponent = (props) => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const ProductFormComponent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     inputs.seller = user;
+    inputs.id=uuid()
     dispatch(addProduct({ inputs: inputs }));
   };
 
@@ -42,7 +44,7 @@ const ProductFormComponent = (props) => {
       <div className="card" style={{ borderRadius: "10px" }}>
         <div className="container m-2">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Ürün ID:</label>
               <input
                 className="form-control"
@@ -51,7 +53,7 @@ const ProductFormComponent = (props) => {
                 value={inputs.id || ""}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
             <div className="form-group">
               <label>Ürün Adı:</label>
               <input
