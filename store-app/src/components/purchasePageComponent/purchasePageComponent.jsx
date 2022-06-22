@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { purchaseProduct, updateBuyer } from "../../store/productStore";
+import { purchaseProduct, removeFromCart, updateBuyer } from "../../store/productStore";
 
 const PurchasePageComponent = (props) => {
   const cart = useSelector((state) => state.productStore.cart);
@@ -71,6 +71,7 @@ const user=useSelector((state)=>state.authStore.currentUser)
                 <th scope="col">Kategori</th>
                 <th scope="col">Adet</th>
                 <th scope="col">Fiyat</th>
+                <th scope="col">Aksiyon</th>
               </tr>
             </thead>
             <tbody>
@@ -90,6 +91,17 @@ const user=useSelector((state)=>state.authStore.currentUser)
                     <td>
                       {parseInt(item?.quantity) *
                         parseInt(item?.product?.price)}
+                    </td>
+                    <td>
+                    <span
+              href="#"
+              className="btn btn-danger"
+              onClick={() => {
+                dispatch(removeFromCart(item.product.id));
+              }}
+            >
+              Sil
+            </span>
                     </td>
                   </tr>
                 );
@@ -120,7 +132,7 @@ const user=useSelector((state)=>state.authStore.currentUser)
                 <label>Kart Numarası:</label>
                 <input
                   className="form-control"
-                  type="text"
+                  type="number"
                   name="cardNumber"
                   value={inputs.cardNumber || ""}
                   onChange={handleChange}
@@ -140,7 +152,7 @@ const user=useSelector((state)=>state.authStore.currentUser)
                 <label>CVV:</label>
                 <input
                   className="form-control"
-                  type="text"
+                  type="number"
                   name="cvv"
                   value={inputs.cvv || ""}
                   onChange={handleChange}

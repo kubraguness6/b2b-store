@@ -20,6 +20,13 @@ export const productStore = createSlice({
       temp.unshift(payload);
       state.cart = temp;
     },
+    removeFromCart: (state, action) => {
+      const payload = action.payload;
+      let temp = [...state.cart.filter(
+        (x) => x.product.id !== payload
+      )];
+      state.cart = temp;
+    },
     purchaseProduct: (state, action) => {
       let cart = [...state.cart];
       let store = [...state.data];
@@ -51,6 +58,6 @@ export const productStore = createSlice({
   },
 });
 
-export const { addProduct, deleteProduct, addToCart, purchaseProduct,updateBuyer } =
+export const { addProduct, deleteProduct, addToCart, purchaseProduct,updateBuyer,removeFromCart } =
   productStore.actions;
 export default productStore.reducer;
